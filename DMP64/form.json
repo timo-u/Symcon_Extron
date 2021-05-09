@@ -1,0 +1,7 @@
+{
+    "elements": [
+	 { "type": "ValidationTextBox", "name": "IPAddress", "caption": "IP-Address" }
+	 ],
+    "actions": [],
+    "status": []
+}

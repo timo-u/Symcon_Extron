@@ -1,0 +1,12 @@
+{
+    "id": "{C308D00D-2EF0-26B5-ABB4-A43694526E00}",
+    "name": "DMP64",
+    "type": 3,
+    "vendor": "Extron",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "EXDMP",
+    "url": ""
+}
