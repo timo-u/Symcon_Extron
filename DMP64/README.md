@@ -24,6 +24,8 @@ Beschreibung des Moduls.
 * Über den Module Store das 'Extron'-Modul installieren.
 * Alternativ über das Module Control folgende URL hinzufügen: https://github.com/timo-u/Symcon_Extron
 
+* Die Datei /docs/api.html in der DMP64 Audiomatrix in den Root-Ordner hochladen 
+
 ### 4. Einrichten der Instanzen in IP-Symcon
 
  Unter 'Instanz hinzufügen' kann das 'DMP64'-Modul mithilfe des Schnellfilters gefunden werden.  
