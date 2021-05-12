@@ -33,9 +33,8 @@ class DMP64 extends IPSModule
 		function SetInputMute(int $channel, bool $mute)
 		{
 			$channel = $this->GetChannelId($channel,0,5);
-			$value = intval($mute) ;
-			
-			$command = "WM4000".$channel."*".$value."AU%7C";
+
+			$command = "WM4000".$channel."*".IntFromBool($mute)."AU%7C";
 			$this->SendCommand($command);
 		}
 		
@@ -50,9 +49,8 @@ class DMP64 extends IPSModule
 		function SetPreMixerMute(int $channel, bool $mute)
 		{
 			$channel = $this->GetChannelId($channel,0,5);
-			$value = intval($mute) ;
-			
-			$command = "WM4010".$channel."*".$value."AU%7C";
+
+			$command = "WM4010".$channel."*".IntFromBool($mute)."AU%7C";
 			$this->SendCommand($command);
 		}
 		function SetOutputGain(int $channel, float $valuedb)
@@ -66,9 +64,8 @@ class DMP64 extends IPSModule
 		function SetOutputMute(int $channel, bool $mute)
 		{
 			$channel = $this->GetChannelId($channel,0,3);
-			$value = intval($mute) ;
-			
-			$command = "WM6000".$channel."*".$value."AU%7C";
+						
+			$command = "WM6000".$channel."*".IntFromBool($mute)."AU%7C";
 			$this->SendCommand($command);
 		}
 		function SetVirtualReturnGain(int $channel, float $valuedb)
@@ -82,9 +79,8 @@ class DMP64 extends IPSModule
 		function SetVirtualReturnMute(int $channel, bool $mute)
 		{
 			$channel = $this->GetChannelId($channel,0,5);
-			$value = intval($mute) ;
-			
-			$command = "WM5000".$channel."*".$value."AU%7C";
+		
+			$command = "WM5000".$channel."*".IntFromBool($mute)."AU%7C";
 			$this->SendCommand($command);
 		}
 		
@@ -102,9 +98,9 @@ class DMP64 extends IPSModule
 		{
 			$channelfrom = $this->GetChannelId($channelfrom,0,9);
 			$channelto = $this->GetChannelId($channelto,0,7);
-			$value = intval($mute) ;
 			
-			$command = "WM20".$channelfrom."0".$channelto."*".$value."AU%7C";
+			
+			$command = "WM20".$channelfrom."0".$channelto."*".IntFromBool($mute)."AU%7C";
 			$this->SendCommand($command);
 		}
 		
@@ -141,6 +137,15 @@ class DMP64 extends IPSModule
 			}
 			return $channel;
 		}
+		
+		private function IntFromBool(bool $input)
+		{
+			if($input)
+				return 1; 
+			return 0; 
+
+		}
+		
 		
 		function SendCommand(string $command)
 		{
